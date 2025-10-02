@@ -5,6 +5,7 @@
 #include <QSpinBox>
 #include <QDoubleSpinBox>
 #include <QtNetwork/QNetworkAccessManager>
+#include "picturelabel.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -22,7 +23,7 @@ public:
 
 private:
     Ui::MainWindow *ui;
-    QLabel* picture;
+    PictureLabel* picture;
     QSpinBox* zoomSpBox;
     QDoubleSpinBox *latSpBox, *lonSpBox;
     QNetworkAccessManager* manager;

@@ -5,20 +5,21 @@
 #include <QPushButton>
 #include <QtNetwork/QNetworkReply>
 #include <QPixmap>
+#include <QMessageBox>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    setWindowTitle("Спутниковый снимок");
 
-    picture = new QLabel;
-    picture->setFixedSize(600, 400);
-    picture->setContentsMargins(0, 0, 0, 0);
+    picture = new PictureLabel;
+    connect(picture, &PictureLabel::coordUpd, this, [this](double lon, double lat) { setWindowTitle(QString("Спутниковый снимок (долгота: %1, широта %2)").arg(lon).arg(lat)); });
 
     latSpBox = new QDoubleSpinBox;
     latSpBox->setDecimals(4);
-    latSpBox->setRange(-90.0000, 90.0000);
+    latSpBox->setRange(-85.0000, 85.0000);
     latSpBox->setValue(55.7558);
 
     lonSpBox = new QDoubleSpinBox;
@@ -29,6 +30,8 @@ MainWindow::MainWindow(QWidget *parent)
     zoomSpBox = new QSpinBox;
     zoomSpBox->setRange(0, 21);
     zoomSpBox->setValue(11);
+
+    picture->valsUpdate(lonSpBox->value(), latSpBox->value(), zoomSpBox->value());
 
     QPushButton* downloadBtn = new QPushButton("Загрузить");
     connect(downloadBtn, &QPushButton::clicked, this, &MainWindow::downloadPicture);
@@ -67,9 +70,19 @@ void MainWindow::downloadPicture()
 
     QNetworkReply* reply = manager->get(QNetworkRequest(QUrl(url)));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
-        QPixmap map;
-        map.loadFromData(reply->readAll());
-        picture->setPixmap(map);
+        if (reply->error() == QNetworkReply::NoError) {
+            QPixmap map;
+            map.loadFromData(reply->readAll());
+            picture->setPixmap(map);
+            picture->valsUpdate(lonSpBox->value(), latSpBox->value(), zoomSpBox->value());
+        }
+        else {
+            QMessageBox box;
+            box.setWindowTitle("Ошибка");
+            box.setText(reply->errorString());
+            box.setIcon(QMessageBox::Warning);
+            box.exec();
+        }
         reply->deleteLater();
     });
 }
