@@ -20,7 +20,6 @@ set(PROJECT_SOURCES
         picturelabel.cpp
 )
 
-
 qt_add_executable(satellite_picture
     MANUAL_FINALIZATION
     ${PROJECT_SOURCES}

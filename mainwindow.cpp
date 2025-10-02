@@ -15,7 +15,10 @@ MainWindow::MainWindow(QWidget *parent)
     setWindowTitle("Спутниковый снимок");
 
     picture = new PictureLabel;
-    connect(picture, &PictureLabel::coordUpd, this, [this](double lon, double lat) { setWindowTitle(QString("Спутниковый снимок (долгота: %1, широта %2)").arg(lon).arg(lat)); });
+    connect(picture, &PictureLabel::coordUpd, this, [this](double lon, double lat, double eastings, double northings, int zone) {
+        if (updateCoord)
+            setWindowTitle(QString("Долгота: %1, широта %2; UTM: E: %3, N: %4, zone: %5").arg(lon).arg(lat).arg(eastings).arg(northings).arg(zone));
+    });
 
     latSpBox = new QDoubleSpinBox;
     latSpBox->setDecimals(4);
@@ -67,6 +70,7 @@ MainWindow::~MainWindow()
 void MainWindow::downloadPicture()
 {
     QString url = QString("https://static-maps.yandex.ru/1.x/?ll=%1,%2&z=%3&l=sat,skl&size=600,400").arg(lonSpBox->value()).arg(latSpBox->value()).arg(zoomSpBox->value());
+    updateCoord = false;
 
     QNetworkReply* reply = manager->get(QNetworkRequest(QUrl(url)));
     connect(reply, &QNetworkReply::finished, this, [this, reply]() {
@@ -75,6 +79,7 @@ void MainWindow::downloadPicture()
             map.loadFromData(reply->readAll());
             picture->setPixmap(map);
             picture->valsUpdate(lonSpBox->value(), latSpBox->value(), zoomSpBox->value());
+            updateCoord = true;
         }
         else {
             QMessageBox box;
@@ -82,6 +87,7 @@ void MainWindow::downloadPicture()
             box.setText(reply->errorString());
             box.setIcon(QMessageBox::Warning);
             box.exec();
+            updateCoord = false;
         }
         reply->deleteLater();
     });

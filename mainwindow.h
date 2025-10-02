@@ -28,7 +28,9 @@ private:
     QDoubleSpinBox *latSpBox, *lonSpBox;
     QNetworkAccessManager* manager;
     QNetworkReply* reply;
+    bool updateCoord = false;
 
 private slots:
+    // загрузка снимка карты с указанными координатами
     void downloadPicture();
 };
