@@ -1,0 +1,9 @@
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/satellite_picture.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/edit_cache.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/rebuild_cache.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/list_install_components.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/install.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/install/local.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/install/strip.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/satellite_picture_autogen_timestamp_deps.dir
+/mnt/d/trash/satellite_picture/linux_build/CMakeFiles/satellite_picture_autogen.dir
