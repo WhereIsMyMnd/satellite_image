@@ -25,6 +25,7 @@ protected:
 private:
     double centerLon, centerLat;
     int zoom;
-    // перевод из WGS в UTM
+    // перевод из WGS в UTM (можно использовать библиотеку GeographicLib, метод Forward)
     std::tuple<double, double, int> latLonToUtm(double lat, double lon);
 };
+
