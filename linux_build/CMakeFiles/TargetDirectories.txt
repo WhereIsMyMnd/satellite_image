@@ -1,8 +1,0 @@
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/satellite_picture.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/edit_cache.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/rebuild_cache.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/list_install_components.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/install.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/install/local.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/install/strip.dir
-/home/a/Загрузки/satellite_image-main/linux_build/CMakeFiles/satellite_picture_autogen.dir
