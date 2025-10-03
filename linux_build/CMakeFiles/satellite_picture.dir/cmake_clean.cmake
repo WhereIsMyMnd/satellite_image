@@ -12,8 +12,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/satellite_picture.dir/satellite_picture_autogen/mocs_compilation.cpp.o.d"
   "satellite_picture"
   "satellite_picture.pdb"
-  "satellite_picture_autogen/mocs_compilation.cpp"
-  "satellite_picture_autogen/timestamp"
 )
 
 # Per-language clean rules from dependency scanning.

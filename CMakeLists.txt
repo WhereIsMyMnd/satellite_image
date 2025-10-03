@@ -11,6 +11,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS Widgets Network)
 
+find_package(GeographicLib QUIET)
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -25,7 +27,18 @@ qt_add_executable(satellite_picture
     ${PROJECT_SOURCES}
 )
 
-target_link_libraries(satellite_picture PRIVATE Qt6::Widgets Qt6::Network)
+target_link_libraries(satellite_picture 
+	PRIVATE 
+		Qt6::Widgets 
+		Qt6::Network
+)
+
+if (GeographicLib_FOUND)
+	target_link_libraries (satellite_picture PRIVATE GeographicLib::GeographicLib)
+	target_compile_definitions(satellite_picture PRIVATE GEO_LIB=1)
+else()
+	target_compile_definitions(satellite_picture PRIVATE GEO_LIB=0)
+endif()
 
 
 include(GNUInstallDirs)

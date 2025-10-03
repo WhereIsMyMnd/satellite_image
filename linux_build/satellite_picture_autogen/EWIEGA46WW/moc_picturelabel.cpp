@@ -1,7 +1,7 @@
 /****************************************************************************
 ** Meta object code from reading C++ file 'picturelabel.h'
 **
-** Created by: The Qt Meta Object Compiler version 68 (Qt 6.4.2)
+** Created by: The Qt Meta Object Compiler version 68 (Qt 6.2.4)
 **
 ** WARNING! All changes made in this file will be lost!
 *****************************************************************************/
@@ -9,72 +9,48 @@
 #include <memory>
 #include "../../../picturelabel.h"
 #include <QtGui/qtextcursor.h>
+#include <QtCore/qbytearray.h>
 #include <QtCore/qmetatype.h>
 #if !defined(Q_MOC_OUTPUT_REVISION)
 #error "The header file 'picturelabel.h' doesn't include <QObject>."
 #elif Q_MOC_OUTPUT_REVISION != 68
-#error "This file was generated using the moc from 6.4.2. It"
+#error "This file was generated using the moc from 6.2.4. It"
 #error "cannot be used with the include files from this version of Qt."
 #error "(The moc has changed too much.)"
-#endif
-
-#ifndef Q_CONSTINIT
-#define Q_CONSTINIT
 #endif
 
 QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
-namespace {
 struct qt_meta_stringdata_PictureLabel_t {
-    uint offsetsAndSizes[24];
-    char stringdata0[13];
-    char stringdata1[9];
-    char stringdata2[1];
-    char stringdata3[4];
-    char stringdata4[4];
-    char stringdata5[9];
-    char stringdata6[10];
-    char stringdata7[5];
-    char stringdata8[11];
-    char stringdata9[10];
-    char stringdata10[10];
-    char stringdata11[5];
+    const uint offsetsAndSize[24];
+    char stringdata0[91];
 };
 #define QT_MOC_LITERAL(ofs, len) \
-    uint(sizeof(qt_meta_stringdata_PictureLabel_t::offsetsAndSizes) + ofs), len 
-Q_CONSTINIT static const qt_meta_stringdata_PictureLabel_t qt_meta_stringdata_PictureLabel = {
+    uint(offsetof(qt_meta_stringdata_PictureLabel_t, stringdata0) + ofs), len 
+static const qt_meta_stringdata_PictureLabel_t qt_meta_stringdata_PictureLabel = {
     {
-        QT_MOC_LITERAL(0, 12),  // "PictureLabel"
-        QT_MOC_LITERAL(13, 8),  // "coordUpd"
-        QT_MOC_LITERAL(22, 0),  // ""
-        QT_MOC_LITERAL(23, 3),  // "lon"
-        QT_MOC_LITERAL(27, 3),  // "lat"
-        QT_MOC_LITERAL(31, 8),  // "eastings"
-        QT_MOC_LITERAL(40, 9),  // "northings"
-        QT_MOC_LITERAL(50, 4),  // "zone"
-        QT_MOC_LITERAL(55, 10),  // "valsUpdate"
-        QT_MOC_LITERAL(66, 9),  // "centerLon"
-        QT_MOC_LITERAL(76, 9),  // "centerLat"
-        QT_MOC_LITERAL(86, 4)   // "zoom"
+QT_MOC_LITERAL(0, 12), // "PictureLabel"
+QT_MOC_LITERAL(13, 8), // "coordUpd"
+QT_MOC_LITERAL(22, 0), // ""
+QT_MOC_LITERAL(23, 3), // "lon"
+QT_MOC_LITERAL(27, 3), // "lat"
+QT_MOC_LITERAL(31, 8), // "eastings"
+QT_MOC_LITERAL(40, 9), // "northings"
+QT_MOC_LITERAL(50, 4), // "zone"
+QT_MOC_LITERAL(55, 10), // "valsUpdate"
+QT_MOC_LITERAL(66, 9), // "centerLon"
+QT_MOC_LITERAL(76, 9), // "centerLat"
+QT_MOC_LITERAL(86, 4) // "zoom"
+
     },
-    "PictureLabel",
-    "coordUpd",
-    "",
-    "lon",
-    "lat",
-    "eastings",
-    "northings",
-    "zone",
-    "valsUpdate",
-    "centerLon",
-    "centerLat",
-    "zoom"
+    "PictureLabel\0coordUpd\0\0lon\0lat\0eastings\0"
+    "northings\0zone\0valsUpdate\0centerLon\0"
+    "centerLat\0zoom"
 };
 #undef QT_MOC_LITERAL
-} // unnamed namespace
 
-Q_CONSTINIT static const uint qt_meta_data_PictureLabel[] = {
+static const uint qt_meta_data_PictureLabel[] = {
 
  // content:
       10,       // revision
@@ -102,31 +78,6 @@ Q_CONSTINIT static const uint qt_meta_data_PictureLabel[] = {
        0        // eod
 };
 
-Q_CONSTINIT const QMetaObject PictureLabel::staticMetaObject = { {
-    QMetaObject::SuperData::link<QLabel::staticMetaObject>(),
-    qt_meta_stringdata_PictureLabel.offsetsAndSizes,
-    qt_meta_data_PictureLabel,
-    qt_static_metacall,
-    nullptr,
-    qt_incomplete_metaTypeArray<qt_meta_stringdata_PictureLabel_t,
-        // Q_OBJECT / Q_GADGET
-        QtPrivate::TypeAndForceComplete<PictureLabel, std::true_type>,
-        // method 'coordUpd'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>,
-        // method 'valsUpdate'
-        QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<double, std::false_type>,
-        QtPrivate::TypeAndForceComplete<int, std::false_type>
-    >,
-    nullptr
-} };
-
 void PictureLabel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void **_a)
 {
     if (_c == QMetaObject::InvokeMetaMethod) {
@@ -141,13 +92,29 @@ void PictureLabel::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         int *result = reinterpret_cast<int *>(_a[0]);
         {
             using _t = void (PictureLabel::*)(double , double , double , double , int );
-            if (_t _q_method = &PictureLabel::coordUpd; *reinterpret_cast<_t *>(_a[1]) == _q_method) {
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&PictureLabel::coordUpd)) {
                 *result = 0;
                 return;
             }
         }
     }
 }
+
+const QMetaObject PictureLabel::staticMetaObject = { {
+    QMetaObject::SuperData::link<QLabel::staticMetaObject>(),
+    qt_meta_stringdata_PictureLabel.offsetsAndSize,
+    qt_meta_data_PictureLabel,
+    qt_static_metacall,
+    nullptr,
+qt_incomplete_metaTypeArray<qt_meta_stringdata_PictureLabel_t
+, QtPrivate::TypeAndForceComplete<PictureLabel, std::true_type>, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+, QtPrivate::TypeAndForceComplete<void, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<double, std::false_type>, QtPrivate::TypeAndForceComplete<int, std::false_type>
+
+
+>,
+    nullptr
+} };
+
 
 const QMetaObject *PictureLabel::metaObject() const
 {

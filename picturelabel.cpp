@@ -1,6 +1,10 @@
 #include "picturelabel.h"
 #include <cmath>
 
+#if GEO_LIB
+#include <GeographicLib/UTMUPS.hpp>
+#endif
+
 PictureLabel::PictureLabel()
 {
     setMouseTracking(true);
@@ -29,8 +33,20 @@ void PictureLabel::mouseMoveEvent(QMouseEvent *event)
 
     double n = M_PI - 2.0 * M_PI * mouseYpic / mapSize;
     double lat = 180.0 / M_PI * atan(0.5 * (exp(n) - exp(-n)));    // широта на Y позиции мышки
-
-    auto [eastings, northings, zone] = latLonToUtm(lat, lon);
+    
+    double eastings, northings;
+    int zone;
+    
+#if GEO_LIB
+    bool northp;
+    GeographicLib::UTMUPS::Forward(lat, lon, zone, northp, eastings, northings);
+        
+    if (!northp) {
+        northings += 10000000.0;
+    }
+#else
+    std::tie(eastings, northings, zone) = latLonToUtm(lat, lon);
+#endif
 
     emit coordUpd(lon, lat, eastings, northings, zone);
 }
